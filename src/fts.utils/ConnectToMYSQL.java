@@ -52,11 +52,13 @@ public class ConnectToMYSQL {
             if(!con.isClosed()){
                 Statement stmt=con.createStatement();  
                 rs=stmt.executeQuery(qry); 
-                return rs.getInt(1);
+                if(rs.next())
+                    return rs.getInt(1);
+                return 0;
             }
         }catch(Exception ex){
         }  
-        return 0;
+        return -1;
     }   
     
     public static DefaultTableModel buildTableModel(ResultSet rs)
@@ -89,7 +91,10 @@ public class ConnectToMYSQL {
             if(!con.isClosed()){               
                Statement statement = con.createStatement();
                statement.executeUpdate(qry);
-               return statement.getUpdateCount();
+               ResultSet rs=statement.getGeneratedKeys();
+               if(rs.next())
+                return rs.getInt(1);
+               return 1;
             }
         }catch(Exception ex){
             System.err.println("Query:"+qry+"");
