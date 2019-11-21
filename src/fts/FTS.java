@@ -6,7 +6,7 @@
 package fts;
 
 
-import fts.frames.logInFrame;
+import fts.frames.Login;
 
 
 
@@ -22,7 +22,7 @@ public class FTS {
     public static String app_name="FTS-File Tracking System";
     public static void main(String[] args) {
         // TODO code application logic here
-        new logInFrame().setVisible(true);
+        new Login().setVisible(true);
         
  
     }

@@ -285,7 +285,8 @@ public class signUpFrame extends javax.swing.JFrame {
                .getText()+"','"+address.getText()+"','"+phone_no.getText()+"','"+email_id.getText()+"',"+user_type+")";
        if(con.InsertQuery(sql)>0){
                                   JOptionPane.showMessageDialog(null, "Registration Successful", fts.FTS.app_name, JOptionPane.INFORMATION_MESSAGE);
-                                  new logInFrame().setVisible(true);
+                                  new Login().setVisible(true);
+                                  this.dispose();
        }else{
                                   JOptionPane.showMessageDialog(null, "Unable to register", fts.FTS.app_name, JOptionPane.ERROR_MESSAGE);
 
@@ -317,7 +318,7 @@ public class signUpFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new logInFrame().setVisible(true);
+        new Login().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void rad_applicantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rad_applicantActionPerformed
