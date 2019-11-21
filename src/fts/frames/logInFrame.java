@@ -146,7 +146,7 @@ JDialog j;
                     switch(_user_type){
                        
                         case 0:new UserHome().setVisible(true);break;
-                        case 1:new UserHome().setVisible(true);break;
+                        case 1:new OfficerHome().setVisible(true);break;
                         case 2:new UserHome().setVisible(true);break;
                         default:JOptionPane.showMessageDialog(null, "Undefined User Type", fts.FTS.app_name, JOptionPane.INFORMATION_MESSAGE);break;
                     }
