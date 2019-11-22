@@ -17,7 +17,17 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ConnectToMYSQL {
     Connection con=null;
-
+    public ConnectToMYSQL() {
+        try{  
+            //Update the connection details
+           String url = "jdbc:mysql://localhost:3306/fts_db";
+           Class.forName ("com.mysql.jdbc.Driver");
+           con = DriverManager.getConnection (url,"root","");
+           System.out.println ("Database connection established");
+        }catch(Exception e){ 
+            System.out.println(e);
+        }  
+        }  
     public ResultSet getResultSet(String qry){
         System.err.println(qry+"");
          ResultSet rs=null;
@@ -125,19 +135,6 @@ public class ConnectToMYSQL {
         }
         return false;
     }
-    public ConnectToMYSQL() {
-        try{  
-           // Class.forName("com.mysql.jdbc.Driver");  
-           // Connection con=DriverManager.getConnection("jdbc:mysql://108.167.136.53:3306/mrdevuj6_miniproject","mrdevuj6_miniusr","r572@cseorc");    
-            //Statement stmt=con.createStatement();  
-            //con.close();  
-           
-           String url = "jdbc:mysql://localhost:3306/fts_db";
-           Class.forName ("com.mysql.jdbc.Driver");
-           con = DriverManager.getConnection (url,"root","");
-           System.out.println ("Database connection established");
-        }catch(Exception e){ 
-            System.out.println(e);}  
-        }  
+
 
 }
